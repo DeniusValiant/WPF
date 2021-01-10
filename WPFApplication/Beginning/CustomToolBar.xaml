@@ -9,10 +9,25 @@
         <DockPanel Height="25" LastChildFill="False"  VerticalAlignment="Top">
             <ToolBarTray HorizontalAlignment="Stretch">
                 <ToolBar HorizontalAlignment="Stretch" >
-                    <Button Name="btnNew" Content="New" Height="25" Width="50"/>
-                    <Button Name="btnEdit" Content="Edit" Height="25" Width="50"/>
+                    <Button Name="btnNew" Height="25" Width="50" >
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Pictures/plus.png" />
+                            <TextBlock Text="New" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                    <Button Name="btnEdit" Height="25" Width="50">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Pictures/Edit.png" />
+                            <TextBlock Text="Edit" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
                     <Separator />
-                    <Button Name="btnDelete" Content="Delete" Height="25" Width="50"/>
+                    <Button Name="btnDelete" Height="25" Width="50">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Pictures/delete.png" />
+                            <TextBlock Text="Delete" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
                 </ToolBar>
             </ToolBarTray>
         </DockPanel>

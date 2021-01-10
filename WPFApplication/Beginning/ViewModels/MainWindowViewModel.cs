@@ -42,8 +42,8 @@ namespace Beginning.ViewModels
 
             BackgroundWorker worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
-            worker.DoWork += worker_DoWork;
-            worker.ProgressChanged += worker_ProgressChanged;
+            worker.DoWork += Worker_DoWork;
+            worker.ProgressChanged += Worker_ProgressChanged;
             //worker.RunWorkerCompleted += worker_RunWorkerCompleted;
             worker.RunWorkerAsync(10000);
         }
@@ -59,7 +59,7 @@ namespace Beginning.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
 
-        void worker_DoWork(object sender, DoWorkEventArgs e)
+        void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
             int max = 10;
             int result = 0;
@@ -73,7 +73,7 @@ namespace Beginning.ViewModels
             e.Result = result;
         }
 
-        void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             _currentProgress = e.ProgressPercentage;
             OnPropertyChanged(nameof(CurrentProgress));
