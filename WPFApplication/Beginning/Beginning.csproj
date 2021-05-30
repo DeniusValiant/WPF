@@ -59,7 +59,10 @@
     <Compile Include="CommandArea.xaml.cs">
       <DependentUpon>CommandArea.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\AsyncCommand.cs" />
     <Compile Include="Commands\CustomCommand.cs" />
+    <Compile Include="Commands\IAsyncCommand.cs" />
+    <Compile Include="Commands\IErrorHandler.cs" />
     <Compile Include="CustomTextBox.cs" />
     <Compile Include="CustomToolBar.xaml.cs">
       <DependentUpon>CustomToolBar.xaml</DependentUpon>

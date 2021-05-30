@@ -18,3 +18,4 @@ C:\Git\WPF\WPFApplication\Beginning\obj\Debug\Beginning.g.resources
 C:\Git\WPF\WPFApplication\Beginning\obj\Debug\Beginning.csproj.CoreCompileInputs.cache
 C:\Git\WPF\WPFApplication\Beginning\obj\Debug\Beginning.exe
 C:\Git\WPF\WPFApplication\Beginning\obj\Debug\Beginning.pdb
+C:\Git\WPF\WPFApplication\Beginning\obj\Debug\Beginning.csprojAssemblyReference.cache

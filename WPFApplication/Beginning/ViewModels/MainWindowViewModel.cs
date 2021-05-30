@@ -15,15 +15,27 @@ namespace Beginning.ViewModels
     {
         private readonly ICommand _startCommand;
         private int _currentProgress;
+        private string _calculationFinished;
 
         public MainWindowViewModel()
         {
             _startCommand = new CustomCommand(StartCommandCanExecute, StartCommandExecute);
+            CalculateCommand = new AsyncCommand(ExecuteSubmitAsync, CanExecuteSubmit);
+        }
+
+        private bool CanExecuteSubmit() => true;
+
+        private async Task ExecuteSubmitAsync()
+        {
+            await CalculateDifficultalgorithm();
+            CalcualtionFinished = "Finished calculation";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public ICommand StartCommand { get { return _startCommand; } }
+
+        public IAsyncCommand CalculateCommand { get; set; }
 
         public int CurrentProgress
         {
@@ -32,6 +44,16 @@ namespace Beginning.ViewModels
             {
                 _currentProgress = value;
                 OnPropertyChanged(nameof(CurrentProgress));
+            }
+        }
+
+        public string CalcualtionFinished
+        {
+            get => _calculationFinished;
+            set
+            {
+                _calculationFinished = value;
+                OnPropertyChanged(nameof(CalcualtionFinished));
             }
         }
 
@@ -77,6 +99,16 @@ namespace Beginning.ViewModels
         {
             _currentProgress = e.ProgressPercentage;
             OnPropertyChanged(nameof(CurrentProgress));
+        }
+
+        private async Task CalculateDifficultalgorithm()
+        {
+            CalculationService();
+        }
+
+        private void CalculationService()
+        {
+            Task.Delay(4000).Wait();
         }
     }
 }
